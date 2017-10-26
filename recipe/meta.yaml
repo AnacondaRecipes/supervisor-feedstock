@@ -23,7 +23,7 @@ requirements:
 
   run:
     - python
-    - meld3 >=1
+    - meld3 >=0.6.5
 
 test:
   requires:
@@ -33,9 +33,11 @@ test:
     - supervisor/tests/
   commands:
     - py.test supervisor/tests/
-    - supervisord
-    - supervisorctl status
-    - supervisorctl shutdown
+    - supervisord -h
+    - supervisorctl -h
+    - echo_supervisord_conf -h
+  imports:
+    - supervisor
 
 about:
   home: http://supervisord.org/
