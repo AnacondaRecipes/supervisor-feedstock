@@ -21,8 +21,10 @@ build:
 requirements:
   host:
     - gettext
+    - pip
     - python
     - setuptools
+    - wheel
   run:
     - python
 
