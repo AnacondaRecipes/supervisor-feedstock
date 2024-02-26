@@ -30,11 +30,13 @@ requirements:
 
 test:
   requires:
+    - pip
     - pytest >=2.5.2
     - mock >=0.5.0
   source_files:
     - supervisor/tests/
   commands:
+    - pip check
     - py.test supervisor/tests/
     - supervisord -h
     - supervisorctl -h
@@ -44,7 +46,7 @@ test:
 
 about:
   home: http://supervisord.org/
-  license: BSD-derived AND PSF AND Other
+  license: BSD-3-Clause-Modification AND BSD-3-Clause AND PSF-2.0
   license_file: LICENSES.txt
   license_family: BSD
   summary: A Process Control System
@@ -52,7 +54,6 @@ about:
     Supervisor is a client/server system that allows its users to monitor and
     control a number of processes on UNIX-like operating systems.
   doc_url: http://supervisord.org/
-  doc_source_url: https://github.com/Supervisor/supervisor
   dev_url: https://github.com/Supervisor/supervisor
 
 extra:
