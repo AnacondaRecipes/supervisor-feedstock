@@ -18,7 +18,7 @@ function mkdir_touch()
     touch $dir/.mkdir
 }
 
-$PYTHON -m pip install . -vv --no-deps --no-build-isolation
+$PYTHON -m pip install --single-version-externally-managed --record record.txt --no-deps --no-build-isolation
 
 mkdir_touch $PREFIX/etc/supervisord/conf.d
 mkdir_touch $PREFIX/etc/supervisord/startup
