@@ -19,8 +19,6 @@ function mkdir_touch()
 }
 
 $PYTHON -m pip install . -vv --no-deps --no-build-isolation
-# Don't install the test suite.
-rm -r $SP_DIR/supervisor/tests
 
 mkdir_touch $PREFIX/etc/supervisord/conf.d
 mkdir_touch $PREFIX/etc/supervisord/startup

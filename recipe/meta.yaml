@@ -36,7 +36,6 @@ test:
   source_files:
     - supervisor/tests/
   commands:
-    - cp -r supervisor/tests $SP_DIR/supervisor
     - pip check
     - py.test supervisor/tests/
     - supervisord -h
