@@ -1,5 +1,5 @@
 {% set name = "supervisor" %}
-{% set version = "4.2.2" %}
+{% set version = "4.2.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5b2b8882ec8a3c3733cce6965cc098b6d80b417f21229ab90b18fe551d619f90
+  sha256: 34761bae1a23c58192281a5115fb07fbf22c9b0133c08166beffc70fed3ebc12
 
 build:
   number: 0
@@ -31,11 +31,13 @@ requirements:
 
 test:
   requires:
+    - pip
     - pytest >=2.5.2
     - mock >=0.5.0
   source_files:
     - supervisor/tests/
   commands:
+    - pip check
     - py.test supervisor/tests/
     - supervisord -h
     - supervisorctl -h
@@ -45,7 +47,7 @@ test:
 
 about:
   home: http://supervisord.org/
-  license: BSD-derived AND PSF AND Other
+  license: BSD-3-Clause-Modification AND BSD-3-Clause AND PSF-2.0
   license_file: LICENSES.txt
   license_family: BSD
   summary: A Process Control System
@@ -53,7 +55,6 @@ about:
     Supervisor is a client/server system that allows its users to monitor and
     control a number of processes on UNIX-like operating systems.
   doc_url: http://supervisord.org/
-  doc_source_url: https://github.com/Supervisor/supervisor
   dev_url: https://github.com/Supervisor/supervisor
 
 extra:
